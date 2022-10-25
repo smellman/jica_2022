@@ -30,3 +30,7 @@ npm install --global .
 ```
 dpkg -i /home/btm/Downloads/code_1.17.2-1665612990_arm64.deb
 ```
+## install qgis 3.10
+```
+apt install qgis qgis-plugin-grass
+```
