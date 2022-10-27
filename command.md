@@ -26,6 +26,7 @@ cd charites
 npm install
 npm run build
 npm install --global .
+cd
 ```
 ## install visual studio code
 ```shell
@@ -45,11 +46,11 @@ apt install qgis qgis-plugin-grass
 git clone https://github.com/mapbox/mbutil.git
 cd mbutil
 python3 setup.py install
+cd
 ```
 # Setup docker
 ```shell
 su –
-nano /etc/resolv.conf
 usermod –aG docker (your login name)
 reboot
 docker run helloworld
