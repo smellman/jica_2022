@@ -8,16 +8,16 @@ apt install docker.io
 apt install p7zip-full
 ```
 ## install tippecanoe fork
-```
+```shell
 apt install build-essential libsqlite3-dev zlib1g-dev
 git clone https://github.com/felt/tippecanoe.git
 cd tippecanoe
-make -j
+make
 make install
 cd
 ```
 ## install nodejs and charties
-```
+```shell
 apt install curl
 curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 apt install nodejs
@@ -28,17 +28,20 @@ npm run build
 npm install --global .
 ```
 ## install visual studio code
-```
+```shell
 dpkg -i /home/btm/Downloads/code_1.63.2-1639562499_amd64.deb
 ```
 ## install qgis
-```
+```shell
 apt install gnupg software-properties-common
 wget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import
 chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg
 add-apt-repository "deb https://qgis.org/ubuntu $(lsb_release -c -s) main"
 apt update
 apt install qgis qgis-plugin-grass
+```
+## install mbutils
+```shell
 git clone https://github.com/mapbox/mbutil.git
 cd mbutil
 python3 setup.py install
