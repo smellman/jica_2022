@@ -1,4 +1,17 @@
-# install software
+# install software for Raspberry Pi 4
+
+## install equinox
+
+```shell
+curl -sL https://unvt.github.io/equinox/install.sh | bash -
+```
+## install qgis 3.10
+
+```shell
+sudo apt install qgis qgis-plugin-grass
+```
+
+# install software for arm64 debian bullseye
 ## install basic software
 ```shell
 su –
