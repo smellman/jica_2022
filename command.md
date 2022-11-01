@@ -35,9 +35,25 @@ dpkg -i /home/btm/Downloads/code_1.63.2-1639562499_amd64.deb
 ## install qgis
 ```shell
 apt install gnupg software-properties-common
-wget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import
-chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg
-add-apt-repository "deb https://qgis.org/ubuntu $(lsb_release -c -s) main"
+mkdir -m755 -p /etc/apt/keyrings
+wget -O /etc/apt/keyrings/qgis-archive-keyring.gpg https://download.qgis.org/downloads/qgis-archive-keyring.gpg
+nano /etc/apt/sources.list.d/qgis.sources
+```
+
+add below:
+
+```
+Types: deb deb-src
+URIs: https://qgis.org/debian
+Suites: bullseye
+Architectures: amd64
+Components: main
+Signed-By: /etc/apt/keyrings/qgis-archive-keyring.gpg
+```
+
+Then, install qgis:
+
+```
 apt update
 apt install qgis qgis-plugin-grass
 ```
